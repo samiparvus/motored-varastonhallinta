@@ -12,6 +12,9 @@ const Layout = () => {
           <Button>
             <Link to="/addvehicle">Add Vehicle</Link>
           </Button>
+          {/* <Button>
+            <Link to="/searchvehicle">Search Vehicle</Link>
+          </Button> */}
         </ul>
       </nav>
       <Outlet />

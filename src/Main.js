@@ -1,15 +1,35 @@
 import React from "react";
-import { Routes, Route } from "react-router-dom";
-
-import AddVehicle from "./AddVehicle";
+import { FormControl, Autocomplete, TextField, Button } from "@mui/material";
+import { Link } from "react-router-dom";
+import VehicleInformation from "./VehicleInformation";
 
 const Main = () => {
+  let rekkari = "";
+
   return (
-    <Routes>
-      {/* The Switch decides which component to show based on the current URL.*/}
-      <Route exact path="/" component={Main}></Route>
-      <Route exact path="/addvehicle" component={AddVehicle}></Route>
-    </Routes>
+    <div className="Main">
+      <FormControl>
+        <Autocomplete
+          disablePortal
+          id="licenseNumber"
+          options={["ASD-123"]}
+          getOptionLabel={(option) => option}
+          onChange={(e, val) => (rekkari = val)}
+          sx={{ width: 300, margin: "1em" }}
+          renderInput={(params) => (
+            <TextField {...params} label="Rekisterinumero" />
+          )}
+        />
+        <Button
+          component={Link}
+          to="/vehicleinformation"
+          variant="contained"
+          onClick={VehicleInformation(rekkari)}
+        >
+          Etsi
+        </Button>
+      </FormControl>
+    </div>
   );
 };
 

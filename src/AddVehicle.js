@@ -11,19 +11,19 @@ import {
 
 let array = ["asd", "asdf", "asdfg"];
 
-function AddVehicle() {
+function AddVehicle(rekkari) {
   return (
     <div className="AddVehicle">
       <FormControl>
         <Autocomplete
           disablePortal
-          id="shelfLocation"
+          id="licenseNumber"
           options={array}
           getOptionLabel={(option) => option}
           onChange={(e, val) => console.log(val)}
           sx={{ width: 300, margin: "1em" }}
           renderInput={(params) => (
-            <TextField {...params} label="Hyllypaikka" />
+            <TextField {...params} label="Rekisterinumero" required />
           )}
         />
         <Autocomplete
@@ -37,32 +37,17 @@ function AddVehicle() {
             <TextField {...params} label="Nimi / malli" />
           )}
         />
-        <Autocomplete
-          disablePortal
+        <TextField
           id="info"
-          options={array}
-          getOptionLabel={(option) => option}
-          onChange={(e, val) => console.log(val)}
+          label="Yleistietoja"
+          multiline={true}
           sx={{ width: 300, margin: "1em" }}
-          renderInput={(params) => (
-            <TextField {...params} label="Yleistietoja" />
-          )}
-        />
-        <Autocomplete
-          disablePortal
-          id="employeeName"
-          options={array}
-          getOptionLabel={(option) => option}
-          onChange={(e, val) => console.log(val)}
-          sx={{ width: 300, margin: "1em" }}
-          renderInput={(params) => (
-            <TextField {...params} label="Myyjän nimi" />
-          )}
         />
         <RadioGroup
           aria-labelledby="status"
           defaultValue="Myynnissä"
           name="radio-buttons-group"
+          required
           onChange={(e, val) => console.log(val)}
           sx={{ margin: "1em" }}
         >
@@ -78,6 +63,28 @@ function AddVehicle() {
             label="Arkistoitu"
           />
         </RadioGroup>
+        <Autocomplete
+          disablePortal
+          id="employeeName"
+          options={array}
+          getOptionLabel={(option) => option}
+          onChange={(e, val) => console.log(val)}
+          sx={{ width: 300, margin: "1em" }}
+          renderInput={(params) => (
+            <TextField {...params} label="Myyjän nimi" />
+          )}
+        />
+        <Autocomplete
+          disablePortal
+          id="shelfLocation"
+          options={array}
+          getOptionLabel={(option) => option}
+          onChange={(e, val) => console.log(val)}
+          sx={{ width: 300, margin: "1em" }}
+          renderInput={(params) => (
+            <TextField {...params} label="Hyllypaikka" />
+          )}
+        />
         <Button
           variant="contained"
           // onClick={() => {
