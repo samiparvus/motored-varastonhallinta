@@ -1,0 +1,16 @@
+[
+  {
+    "rekisterinumero": "ABC-123",
+    "malli": "Yamaha",
+    "yleistietoja": "Malli on Yamaha",
+    "status": "Myyty",
+    "myyjän_nimi": "Teppo Tulppu"
+  },
+  {
+    "rekisterinumero": "DEF-456",
+    "malli": "Kawasaki",
+    "yleistietoja": "Malli on Kawasaki",
+    "status": "Myynnissä",
+    "myyjän_nimi": "Hannu Hanhi"
+  }
+]

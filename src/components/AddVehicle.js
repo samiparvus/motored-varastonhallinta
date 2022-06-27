@@ -11,7 +11,7 @@ import {
 
 let array = ["asd", "asdf", "asdfg"];
 
-function AddVehicle(rekkari) {
+const AddVehicle = (rekkari) => {
   return (
     <div className="AddVehicle">
       <FormControl>
@@ -105,6 +105,6 @@ function AddVehicle(rekkari) {
       </FormControl>
     </div>
   );
-}
+};
 
 export default AddVehicle;

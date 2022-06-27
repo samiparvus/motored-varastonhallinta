@@ -1,6 +1,4 @@
 import * as React from "react";
-import AddVehicle from "./AddVehicle";
-import Main from "./Main";
 
 const App = () => {
   return (

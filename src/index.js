@@ -1,8 +1,8 @@
 import ReactDOM from "react-dom/client";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import AddVehicle from "./AddVehicle";
-import VehicleInformation from "./VehicleInformation";
-import AddItem from "./AddItem";
+import AddVehicle from "./components/AddVehicle";
+import VehicleInformation from "./components/VehicleInformation";
+import AddItem from "./components/AddItem";
 import Main from "./Main";
 import Layout from "./Layout";
 

@@ -2,20 +2,22 @@ import * as React from "react";
 import { FormControl, Autocomplete, Button, TextField } from "@mui/material";
 import { Link } from "react-router-dom";
 
-const SearchVehicle = () => {
+export default SearchVehicle = () => {
+  const [data, setData] = (useState = "");
+
+  const searchRegNum = () => {};
+
   return (
     <div className="SearchVehicle">
-      <FormControl>
+      <FormControl action="/">
         <Autocomplete
           disablePortal
           id="licenseNumber"
           options={["ASD-123", "ASD-321"]}
           getOptionLabel={(option) => option}
-          onChange={(e, val) => console.log(val)}
-          sx={{ width: 300, margin: "1em" }}
-          renderInput={(params) => (
-            <TextField {...params} label="Rekisterinumero" />
-          )}
+          onChange={(event, val) => console.log(val)}
+          sx={{ width: 200, margin: "1em" }}
+          renderInput={(params) => <TextField {...params} label="Auto" />}
         />
         <Button component={Link} to="/additems" variant="contained">
           Etsi
@@ -24,5 +26,3 @@ const SearchVehicle = () => {
     </div>
   );
 };
-
-export default SearchVehicle;

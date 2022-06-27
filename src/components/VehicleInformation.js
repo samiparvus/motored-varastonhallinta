@@ -19,10 +19,12 @@ const VehicleInformation = (rekkari) => {
   const malliLista = ["Kawasaki", "Honda", "Yamaha"];
   const myyjäLista = ["Sami Testi", "Teppo Tulppu"];
 
+  console.log(rekkari);
+
   let array = rekkari;
   return (
     <Grid container>
-      <Grid xs="3.2" minWidth="332px">
+      <Grid xs={3.2} minWidth="332px">
         <FormControl>
           <TextField
             label="Rekisterinumero"
@@ -91,7 +93,7 @@ const VehicleInformation = (rekkari) => {
           <Button variant="contained">Tallenna</Button>
         </FormControl>
       </Grid>
-      <Grid xs="0.1">
+      <Grid xs={0.1}>
         <Divider
           orientation="vertical"
           style={{ marginRight: "-1px" }}
