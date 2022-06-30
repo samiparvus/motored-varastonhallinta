@@ -1,5 +1,12 @@
-import React from "react";
-import { FormControl, TextField, Button, Autocomplete } from "@mui/material";
+import React, { useState } from "react";
+import { createSearchParams, Route, useNavigate } from "react-router-dom";
+import {
+  FormControl,
+  TextField,
+  Button,
+  Autocomplete,
+  Container,
+} from "@mui/material";
 import VehicleInformation from "./components/VehicleInformation";
 import VehicleData from "./Data.json";
 
@@ -15,34 +22,50 @@ import VehicleData from "./Data.json";
 
 const Main = () => {
   const vehicleArray = [];
-  let val = "";
+  const navigate = useNavigate();
+  const [selectedRegnum, setSelectedRegnum] = useState(null);
+
   const data = VehicleData.map(({ rekisterinumero }) => ({ rekisterinumero }));
   for (let i = 0; i < data.length; i++) {
     vehicleArray.push(data[i].rekisterinumero);
   }
 
-  const handleSubmit = (rekkari) => {
-    VehicleInformation(this.rekkari);
-  };
+  function handleSearch(event, val) {
+    event.preventDefault();
+
+    let rekkari = val;
+
+    navigate({
+      pathname: "/vehicleinformation",
+      search: createSearchParams({
+        regNum: rekkari,
+      }).toString(),
+    });
+  }
 
   return (
-    <form onSubmit={handleSubmit}>
+    <Container>
       <FormControl>
         <Autocomplete
           placeholder="Rekisterinumero"
           options={vehicleArray}
           sx={{ width: 300, marginBottom: 1 }}
-          onChange={(event, value) => (val = value)}
-          onSubmit={() => handleSubmit(val)}
           renderInput={(params) => (
             <TextField {...params} label="Rekisterinumero" />
           )}
+          value={selectedRegnum}
+          onChange={(event, newRegnum) => {
+            setSelectedRegnum(newRegnum);
+          }}
         />
+        <Button
+          variant="contained"
+          onClick={(event, val) => handleSearch(event, selectedRegnum)}
+        >
+          Etsi
+        </Button>
       </FormControl>
-      <Button type="submit" variant="contained">
-        Etsi
-      </Button>
-    </form>
+    </Container>
   );
 };
 
