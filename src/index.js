@@ -15,7 +15,10 @@ export default function App() {
           <Route path="addvehicle" element={<AddVehicle />} />
           {/* <Route path="searchvehicle" element={<SearchVehicle />} /> */}
           <Route path="additems" element={<AddItem />} />
-          <Route path="vehicleinformation" element={<VehicleInformation />} />
+          <Route
+            path="vehicleinformation?=regNum=:regNum"
+            element={<VehicleInformation />}
+          />
         </Route>
       </Routes>
     </BrowserRouter>
