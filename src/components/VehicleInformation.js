@@ -13,15 +13,15 @@ import {
   ListItem,
   List,
 } from "@mui/material";
-import { Route, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 
-const VehicleInformation = (rekkari) => {
+const VehicleInformation = () => {
   const esineLista = ["pakoputki", "rengas", "vaihteisto", "moottori"];
   const malliLista = ["Kawasaki", "Honda", "Yamaha"];
   const myyjäLista = ["Sami Testi", "Teppo Tulppu"];
+  const { rekkari } = useParams();
 
-  let { regNum } = useParams();
-  console.log("wat: " + regNum);
+  console.log("wat: " + rekkari);
 
   return (
     <Grid container>

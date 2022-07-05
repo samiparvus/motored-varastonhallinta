@@ -16,7 +16,7 @@ export default function App() {
           {/* <Route path="searchvehicle" element={<SearchVehicle />} /> */}
           <Route path="additems" element={<AddItem />} />
           <Route
-            path="vehicleinformation?=regNum=:regNum"
+            path="vehicleinformation/:regNum"
             element={<VehicleInformation />}
           />
         </Route>
