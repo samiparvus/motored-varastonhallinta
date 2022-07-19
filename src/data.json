@@ -4,13 +4,15 @@
     "malli": "Yamaha",
     "yleistietoja": "Malli on Yamaha",
     "status": "Myyty",
-    "myyjän_nimi": "Teppo Tulppu"
+    "myyjanNimi": "Teppo Tulppu",
+    "hyllypaikka": "B2"
   },
   {
     "rekisterinumero": "DEF-456",
     "malli": "Kawasaki",
     "yleistietoja": "Malli on Kawasaki",
     "status": "Myynnissä",
-    "myyjän_nimi": "Hannu Hanhi"
+    "myyjanNimi": "Hannu Hanhi",
+    "hyllypaikka": "A1"
   }
 ]

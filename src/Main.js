@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { createSearchParams, Route, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import {
   FormControl,
   TextField,
@@ -7,18 +7,12 @@ import {
   Autocomplete,
   Container,
 } from "@mui/material";
-import VehicleInformation from "./components/VehicleInformation";
-import VehicleData from "./Data.json";
+import VehicleData from "./data.json";
 
-// 1. Hakuominaisuus toimivaksi
-// 2. Luo kunnon objektit pyörille
-// 3. Hakuominaisuus backendistä
-// 4. Muut muutokset UI:hin joista on puhuttu (kuten haussa näkyviin mahdolliset rekisterinumerot (löytyy kirjanmerkeistä))
-
-// Haku vie /vehicleinformation/REKKARI sivulle, jossa voi muokata
-// kyseisen rekkarin objektia ja tallentaa muutokset jotka viedään bäkkäriin
-
-// Search bar toimimaan niin pitäisi onnistua mukavammin haku
+// 1. Hakuominaisuus backendistä
+// 2. Esineen lisäys hyllypaikalle
+// 3. Uuden ajoneuvon lisäys
+// X. Muut muutokset UI:hin joista on puhuttu (kuten haussa näkyviin mahdolliset rekisterinumerot (löytyy kirjanmerkeistä))
 
 const Main = () => {
   const vehicleArray = [];
@@ -35,12 +29,7 @@ const Main = () => {
 
     let rekkari = val;
 
-    navigate({
-      pathname: "/vehicleinformation",
-      search: createSearchParams({
-        regNum: rekkari,
-      }).toString(),
-    });
+    navigate(`/vehicleinformation/${rekkari}`);
   }
 
   return (
